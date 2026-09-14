@@ -1,0 +1,8 @@
+-r requirements.txt
+
+# QMT market-data gateway (Windows/MiniQMT)
+xtquant==250807.1.2
+
+# HTTP and WebSocket bridge
+fastapi==0.141.1
+uvicorn[standard]==0.52.1

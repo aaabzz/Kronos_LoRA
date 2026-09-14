@@ -1,0 +1,35 @@
+# Kronos model and numerical runtime
+numpy==2.2.6
+pandas==2.3.3
+pyarrow==25.0.1
+torch==2.5.1
+einops==0.8.1
+huggingface-hub==0.33.1
+safetensors==0.6.2
+peft==0.20.0
+tqdm==4.67.1
+matplotlib==3.9.3
+
+# MiniQMT real-time market data (Windows)
+xtquant==250807.1.2
+
+# FastAPI HTTP/WebSocket service
+fastapi==0.141.1
+uvicorn[standard]==0.52.1
+
+# Legacy Flask WebUI and data-source examples
+Flask==2.3.3
+Flask-Cors==4.0.0
+plotly==5.17.0
+requests==2.34.2
+akshare==1.18.81
+baostock
+
+# Fine-tuning and Qlib evaluation scripts
+PyYAML==6.0.3
+pyqlib
+comet-ml
+
+# Tests
+pytest==9.1.1
+httpx==0.28.1

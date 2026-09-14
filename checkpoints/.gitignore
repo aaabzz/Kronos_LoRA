@@ -1,0 +1,9 @@
+# Ignore generated checkpoint contents by default.
+*
+
+# Keep the documented directory skeleton in Git.
+!.gitignore
+!README.md
+!Kronos-base-QV-LoRA/
+!Kronos-base-QV-LoRA/runs/
+!Kronos-base-QV-LoRA/runs/.gitkeep

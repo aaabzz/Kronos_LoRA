@@ -1,0 +1,4 @@
+# Parquet reader used by pandas.read_parquet.
+pyarrow
+# Static experiment plots (headless Agg backend).
+matplotlib>=3.9,<4

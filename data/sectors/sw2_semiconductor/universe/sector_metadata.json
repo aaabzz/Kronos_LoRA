@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "kind": "xtquant_sector_snapshot",
+  "sector_name": "SW2半导体",
+  "sector_names": [
+    "SW2半导体"
+  ],
+  "sector_count": 1,
+  "sector_symbol_counts": {
+    "SW2半导体": 186
+  },
+  "generated_at": "2026-09-10T08:34:13.338138+00:00",
+  "membership_semantics": "current_constituents_at_generation_time",
+  "include_beijing": true,
+  "symbol_count": 186,
+  "source_symbol_assignments": 186,
+  "overlap_assignments": 0,
+  "universe_sha256": "c0793fc389146d12ab4be2253f6a7d1f86b832944c44d2798665aa8eb8b70bd7",
+  "symbols_file": "D:\\PycharmProjects\\Kronos\\data\\sectors\\sw2_semiconductor\\universe\\symbols.txt",
+  "membership_file": "D:\\PycharmProjects\\Kronos\\data\\sectors\\sw2_semiconductor\\universe\\sector_membership.json"
+}

@@ -1,0 +1,3775 @@
+{
+  "version": 1,
+  "created_at": "2026-09-02T03:04:07.760537+00:00",
+  "updated_at": "2026-09-02T11:27:01.563647+08:00",
+  "status": "completed",
+  "start_date": "20250901",
+  "end_date": "20260901",
+  "universe_sha256": "1cd19911e207f8d7530b247ac0c22333c3873486306eaace9857cf7aafb8ee99",
+  "symbol_count": 5591,
+  "config": {
+    "output_dir": "D:\\PycharmProjects\\Kronos\\data\\lora",
+    "period": "5m",
+    "start_date": null,
+    "end_date": null,
+    "lookback_years": 1,
+    "include_beijing": true,
+    "include_today": false,
+    "download_batch_size": 100,
+    "read_batch_size": 100,
+    "dividend_type": "front",
+    "fill_data": false,
+    "retry_count": 3,
+    "compression": "zstd",
+    "resume": true,
+    "fields": [
+      "time",
+      "open",
+      "high",
+      "low",
+      "close",
+      "volume",
+      "amount"
+    ]
+  },
+  "completed_batches": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55
+  ],
+  "files": [
+    {
+      "path": "year=2025\\month=09\\part-batch-00000.parquet",
+      "rows": 102285,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00000.parquet",
+      "rows": 81408,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00000.parquet",
+      "rows": 95664,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00000.parquet",
+      "rows": 110352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00000.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00000.parquet",
+      "rows": 67152,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00000.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00000.parquet",
+      "rows": 100608,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00000.parquet",
+      "rows": 86352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00000.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00000.parquet",
+      "rows": 110160,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00000.parquet",
+      "rows": 100608,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00000.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00001.parquet",
+      "rows": 102246,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00001.parquet",
+      "rows": 81504,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00001.parquet",
+      "rows": 95472,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00001.parquet",
+      "rows": 110352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00001.parquet",
+      "rows": 95280,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00001.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00001.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00001.parquet",
+      "rows": 100032,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00001.parquet",
+      "rows": 86304,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00001.parquet",
+      "rows": 100512,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00001.parquet",
+      "rows": 110064,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00001.parquet",
+      "rows": 100704,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00001.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00002.parquet",
+      "rows": 102198,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00002.parquet",
+      "rows": 81552,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00002.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00002.parquet",
+      "rows": 110304,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00002.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00002.parquet",
+      "rows": 67008,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00002.parquet",
+      "rows": 105264,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00002.parquet",
+      "rows": 100656,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00002.parquet",
+      "rows": 86352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00002.parquet",
+      "rows": 100704,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00002.parquet",
+      "rows": 110304,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00002.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00002.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00003.parquet",
+      "rows": 102288,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00003.parquet",
+      "rows": 81552,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00003.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00003.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00003.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00003.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00003.parquet",
+      "rows": 105312,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00003.parquet",
+      "rows": 100320,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00003.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00003.parquet",
+      "rows": 100656,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00003.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00003.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00003.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00004.parquet",
+      "rows": 92013,
+      "symbols": 91
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00004.parquet",
+      "rows": 73488,
+      "symbols": 91
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00004.parquet",
+      "rows": 87552,
+      "symbols": 92
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00004.parquet",
+      "rows": 102720,
+      "symbols": 94
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00004.parquet",
+      "rows": 90048,
+      "symbols": 94
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00004.parquet",
+      "rows": 63360,
+      "symbols": 95
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00004.parquet",
+      "rows": 100320,
+      "symbols": 96
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00004.parquet",
+      "rows": 97152,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00004.parquet",
+      "rows": 83952,
+      "symbols": 98
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00004.parquet",
+      "rows": 97872,
+      "symbols": 98
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00004.parquet",
+      "rows": 109248,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00004.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00004.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00005.parquet",
+      "rows": 96213,
+      "symbols": 94
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00005.parquet",
+      "rows": 76848,
+      "symbols": 95
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00005.parquet",
+      "rows": 91200,
+      "symbols": 95
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00005.parquet",
+      "rows": 104736,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00005.parquet",
+      "rows": 92688,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00005.parquet",
+      "rows": 65184,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00005.parquet",
+      "rows": 102432,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00005.parquet",
+      "rows": 97776,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00005.parquet",
+      "rows": 84768,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00005.parquet",
+      "rows": 99888,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00005.parquet",
+      "rows": 110112,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00005.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00005.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00006.parquet",
+      "rows": 101916,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00006.parquet",
+      "rows": 81264,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00006.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00006.parquet",
+      "rows": 109680,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00006.parquet",
+      "rows": 95376,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00006.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00006.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00006.parquet",
+      "rows": 100608,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00006.parquet",
+      "rows": 86352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00006.parquet",
+      "rows": 100272,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00006.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00006.parquet",
+      "rows": 100320,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00006.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00007.parquet",
+      "rows": 102054,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00007.parquet",
+      "rows": 81312,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00007.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00007.parquet",
+      "rows": 110064,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00007.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00007.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00007.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00007.parquet",
+      "rows": 100608,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00007.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00007.parquet",
+      "rows": 100656,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00007.parquet",
+      "rows": 110352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00007.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00007.parquet",
+      "rows": 4752,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00008.parquet",
+      "rows": 102174,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00008.parquet",
+      "rows": 81456,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00008.parquet",
+      "rows": 95568,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00008.parquet",
+      "rows": 110352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00008.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00008.parquet",
+      "rows": 66960,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00008.parquet",
+      "rows": 105408,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00008.parquet",
+      "rows": 100656,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00008.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00008.parquet",
+      "rows": 100704,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00008.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00008.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00008.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00009.parquet",
+      "rows": 102318,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00009.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00009.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00009.parquet",
+      "rows": 110160,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00009.parquet",
+      "rows": 95856,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00009.parquet",
+      "rows": 66864,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00009.parquet",
+      "rows": 105360,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00009.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00009.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00009.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00009.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00009.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00009.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00010.parquet",
+      "rows": 102081,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00010.parquet",
+      "rows": 81360,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00010.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00010.parquet",
+      "rows": 110352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00010.parquet",
+      "rows": 95808,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00010.parquet",
+      "rows": 67008,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00010.parquet",
+      "rows": 105264,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00010.parquet",
+      "rows": 100464,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00010.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00010.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00010.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00010.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00010.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00011.parquet",
+      "rows": 102273,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00011.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00011.parquet",
+      "rows": 95664,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00011.parquet",
+      "rows": 110256,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00011.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00011.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00011.parquet",
+      "rows": 105552,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00011.parquet",
+      "rows": 100272,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00011.parquet",
+      "rows": 86112,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00011.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00011.parquet",
+      "rows": 110064,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00011.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00011.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00012.parquet",
+      "rows": 102237,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00012.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00012.parquet",
+      "rows": 95760,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00012.parquet",
+      "rows": 109104,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00012.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00012.parquet",
+      "rows": 67152,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00012.parquet",
+      "rows": 105456,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00012.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00012.parquet",
+      "rows": 85536,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00012.parquet",
+      "rows": 99648,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00012.parquet",
+      "rows": 109776,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00012.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00012.parquet",
+      "rows": 4752,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00013.parquet",
+      "rows": 102267,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00013.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00013.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00013.parquet",
+      "rows": 109920,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00013.parquet",
+      "rows": 95616,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00013.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00013.parquet",
+      "rows": 105120,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00013.parquet",
+      "rows": 100464,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00013.parquet",
+      "rows": 86352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00013.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00013.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00013.parquet",
+      "rows": 100608,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00013.parquet",
+      "rows": 4752,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00014.parquet",
+      "rows": 101826,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00014.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00014.parquet",
+      "rows": 95760,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00014.parquet",
+      "rows": 110160,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00014.parquet",
+      "rows": 95616,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00014.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00014.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00014.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00014.parquet",
+      "rows": 86352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00014.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00014.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00014.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00014.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00015.parquet",
+      "rows": 100782,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00015.parquet",
+      "rows": 80544,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00015.parquet",
+      "rows": 94992,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00015.parquet",
+      "rows": 109056,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00015.parquet",
+      "rows": 94848,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00015.parquet",
+      "rows": 66480,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00015.parquet",
+      "rows": 104496,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00015.parquet",
+      "rows": 99024,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00015.parquet",
+      "rows": 85056,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00015.parquet",
+      "rows": 99696,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00015.parquet",
+      "rows": 109296,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00015.parquet",
+      "rows": 99792,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00015.parquet",
+      "rows": 4752,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00016.parquet",
+      "rows": 101811,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00016.parquet",
+      "rows": 81360,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00016.parquet",
+      "rows": 95760,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00016.parquet",
+      "rows": 109968,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00016.parquet",
+      "rows": 95760,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00016.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00016.parquet",
+      "rows": 105456,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00016.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00016.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00016.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00016.parquet",
+      "rows": 110016,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00016.parquet",
+      "rows": 100464,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00016.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00017.parquet",
+      "rows": 102177,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00017.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00017.parquet",
+      "rows": 95376,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00017.parquet",
+      "rows": 109776,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00017.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00017.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00017.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00017.parquet",
+      "rows": 100704,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00017.parquet",
+      "rows": 86352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00017.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00017.parquet",
+      "rows": 109776,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00017.parquet",
+      "rows": 100128,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00017.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00018.parquet",
+      "rows": 102162,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00018.parquet",
+      "rows": 80976,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00018.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00018.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00018.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00018.parquet",
+      "rows": 66912,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00018.parquet",
+      "rows": 105408,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00018.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00018.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00018.parquet",
+      "rows": 100512,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00018.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00018.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00018.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00019.parquet",
+      "rows": 102213,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00019.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00019.parquet",
+      "rows": 95712,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00019.parquet",
+      "rows": 109728,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00019.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00019.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00019.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00019.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00019.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00019.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00019.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00019.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00019.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00020.parquet",
+      "rows": 102252,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00020.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00020.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00020.parquet",
+      "rows": 109920,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00020.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00020.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00020.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00020.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00020.parquet",
+      "rows": 86160,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00020.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00020.parquet",
+      "rows": 109920,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00020.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00020.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00021.parquet",
+      "rows": 102225,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00021.parquet",
+      "rows": 81552,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00021.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00021.parquet",
+      "rows": 109920,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00021.parquet",
+      "rows": 95472,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00021.parquet",
+      "rows": 67008,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00021.parquet",
+      "rows": 105504,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00021.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00021.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00021.parquet",
+      "rows": 100416,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00021.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00021.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00021.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00022.parquet",
+      "rows": 102270,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00022.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00022.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00022.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00022.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00022.parquet",
+      "rows": 66720,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00022.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00022.parquet",
+      "rows": 100368,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00022.parquet",
+      "rows": 85872,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00022.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00022.parquet",
+      "rows": 110160,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00022.parquet",
+      "rows": 100416,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00022.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00023.parquet",
+      "rows": 102069,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00023.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00023.parquet",
+      "rows": 95616,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00023.parquet",
+      "rows": 110064,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00023.parquet",
+      "rows": 95616,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00023.parquet",
+      "rows": 67104,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00023.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00023.parquet",
+      "rows": 100608,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00023.parquet",
+      "rows": 86112,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00023.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00023.parquet",
+      "rows": 110160,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00023.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00023.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00024.parquet",
+      "rows": 102048,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00024.parquet",
+      "rows": 81456,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00024.parquet",
+      "rows": 95712,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00024.parquet",
+      "rows": 110064,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00024.parquet",
+      "rows": 95856,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00024.parquet",
+      "rows": 67008,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00024.parquet",
+      "rows": 105216,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00024.parquet",
+      "rows": 100272,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00024.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00024.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00024.parquet",
+      "rows": 110256,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00024.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00024.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00025.parquet",
+      "rows": 102342,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00025.parquet",
+      "rows": 81552,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00025.parquet",
+      "rows": 95328,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00025.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00025.parquet",
+      "rows": 95856,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00025.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00025.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00025.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00025.parquet",
+      "rows": 86112,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00025.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00025.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00025.parquet",
+      "rows": 100704,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00025.parquet",
+      "rows": 4752,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00026.parquet",
+      "rows": 102297,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00026.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00026.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00026.parquet",
+      "rows": 110016,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00026.parquet",
+      "rows": 95664,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00026.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00026.parquet",
+      "rows": 105312,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00026.parquet",
+      "rows": 100608,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00026.parquet",
+      "rows": 86352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00026.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00026.parquet",
+      "rows": 109920,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00026.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00026.parquet",
+      "rows": 4752,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00027.parquet",
+      "rows": 101394,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00027.parquet",
+      "rows": 80784,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00027.parquet",
+      "rows": 95040,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00027.parquet",
+      "rows": 109632,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00027.parquet",
+      "rows": 95520,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00027.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00027.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00027.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00027.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00027.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00027.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00027.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00027.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00028.parquet",
+      "rows": 77091,
+      "symbols": 79
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00028.parquet",
+      "rows": 64464,
+      "symbols": 79
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00028.parquet",
+      "rows": 76272,
+      "symbols": 80
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00028.parquet",
+      "rows": 88704,
+      "symbols": 82
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00028.parquet",
+      "rows": 78720,
+      "symbols": 82
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00028.parquet",
+      "rows": 55104,
+      "symbols": 82
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00028.parquet",
+      "rows": 87696,
+      "symbols": 84
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00028.parquet",
+      "rows": 87456,
+      "symbols": 89
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00028.parquet",
+      "rows": 77472,
+      "symbols": 90
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00028.parquet",
+      "rows": 91440,
+      "symbols": 91
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00028.parquet",
+      "rows": 101328,
+      "symbols": 93
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00028.parquet",
+      "rows": 95664,
+      "symbols": 96
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00028.parquet",
+      "rows": 4656,
+      "symbols": 97
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00029.parquet",
+      "rows": 102324,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00029.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00029.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00029.parquet",
+      "rows": 110256,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00029.parquet",
+      "rows": 95616,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00029.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00029.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00029.parquet",
+      "rows": 100464,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00029.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00029.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00029.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00029.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00029.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00030.parquet",
+      "rows": 102264,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00030.parquet",
+      "rows": 81360,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00030.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00030.parquet",
+      "rows": 110112,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00030.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00030.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00030.parquet",
+      "rows": 105504,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00030.parquet",
+      "rows": 100608,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00030.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00030.parquet",
+      "rows": 100512,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00030.parquet",
+      "rows": 110352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00030.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00030.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00031.parquet",
+      "rows": 102252,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00031.parquet",
+      "rows": 81360,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00031.parquet",
+      "rows": 95520,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00031.parquet",
+      "rows": 109920,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00031.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00031.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00031.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00031.parquet",
+      "rows": 100464,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00031.parquet",
+      "rows": 86352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00031.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00031.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00031.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00031.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00032.parquet",
+      "rows": 102312,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00032.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00032.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00032.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00032.parquet",
+      "rows": 95520,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00032.parquet",
+      "rows": 67056,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00032.parquet",
+      "rows": 105264,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00032.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00032.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00032.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00032.parquet",
+      "rows": 109872,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00032.parquet",
+      "rows": 100656,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00032.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00033.parquet",
+      "rows": 102261,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00033.parquet",
+      "rows": 81552,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00033.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00033.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00033.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00033.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00033.parquet",
+      "rows": 105552,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00033.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00033.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00033.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00033.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00033.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00033.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00034.parquet",
+      "rows": 102246,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00034.parquet",
+      "rows": 81504,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00034.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00034.parquet",
+      "rows": 110016,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00034.parquet",
+      "rows": 95904,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00034.parquet",
+      "rows": 66912,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00034.parquet",
+      "rows": 104256,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00034.parquet",
+      "rows": 99552,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00034.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00034.parquet",
+      "rows": 100272,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00034.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00034.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00034.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00035.parquet",
+      "rows": 102372,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00035.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00035.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00035.parquet",
+      "rows": 109920,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00035.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00035.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00035.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00035.parquet",
+      "rows": 100704,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00035.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00035.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00035.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00035.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00035.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00036.parquet",
+      "rows": 100287,
+      "symbols": 98
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00036.parquet",
+      "rows": 80496,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00036.parquet",
+      "rows": 94704,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00036.parquet",
+      "rows": 108672,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00036.parquet",
+      "rows": 95136,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00036.parquet",
+      "rows": 67152,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00036.parquet",
+      "rows": 105504,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00036.parquet",
+      "rows": 99744,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00036.parquet",
+      "rows": 86160,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00036.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00036.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00036.parquet",
+      "rows": 100272,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00036.parquet",
+      "rows": 4752,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00037.parquet",
+      "rows": 102243,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00037.parquet",
+      "rows": 81504,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00037.parquet",
+      "rows": 95664,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00037.parquet",
+      "rows": 109776,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00037.parquet",
+      "rows": 95616,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00037.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00037.parquet",
+      "rows": 105120,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00037.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00037.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00037.parquet",
+      "rows": 100704,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00037.parquet",
+      "rows": 110016,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00037.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00037.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00038.parquet",
+      "rows": 102288,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00038.parquet",
+      "rows": 81120,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00038.parquet",
+      "rows": 95664,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00038.parquet",
+      "rows": 109776,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00038.parquet",
+      "rows": 95904,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00038.parquet",
+      "rows": 66912,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00038.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00038.parquet",
+      "rows": 100608,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00038.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00038.parquet",
+      "rows": 100608,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00038.parquet",
+      "rows": 110352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00038.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00038.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00039.parquet",
+      "rows": 101295,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00039.parquet",
+      "rows": 80304,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00039.parquet",
+      "rows": 95424,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00039.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00039.parquet",
+      "rows": 95760,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00039.parquet",
+      "rows": 66960,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00039.parquet",
+      "rows": 105360,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00039.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00039.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00039.parquet",
+      "rows": 100320,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00039.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00039.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00039.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00040.parquet",
+      "rows": 100230,
+      "symbols": 98
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00040.parquet",
+      "rows": 80256,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00040.parquet",
+      "rows": 94608,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00040.parquet",
+      "rows": 109632,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00040.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00040.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00040.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00040.parquet",
+      "rows": 100416,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00040.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00040.parquet",
+      "rows": 100512,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00040.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00040.parquet",
+      "rows": 100416,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00040.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00041.parquet",
+      "rows": 94695,
+      "symbols": 93
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00041.parquet",
+      "rows": 75888,
+      "symbols": 93
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00041.parquet",
+      "rows": 90960,
+      "symbols": 95
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00041.parquet",
+      "rows": 104784,
+      "symbols": 95
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00041.parquet",
+      "rows": 92688,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00041.parquet",
+      "rows": 65568,
+      "symbols": 98
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00041.parquet",
+      "rows": 103488,
+      "symbols": 98
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00041.parquet",
+      "rows": 99216,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00041.parquet",
+      "rows": 86016,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00041.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00041.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00041.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00041.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00042.parquet",
+      "rows": 98007,
+      "symbols": 97
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00042.parquet",
+      "rows": 79104,
+      "symbols": 97
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00042.parquet",
+      "rows": 93120,
+      "symbols": 97
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00042.parquet",
+      "rows": 106704,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00042.parquet",
+      "rows": 92640,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00042.parquet",
+      "rows": 65088,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00042.parquet",
+      "rows": 102384,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00042.parquet",
+      "rows": 98544,
+      "symbols": 98
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00042.parquet",
+      "rows": 84960,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00042.parquet",
+      "rows": 99744,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00042.parquet",
+      "rows": 109008,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00042.parquet",
+      "rows": 100656,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00042.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00043.parquet",
+      "rows": 102288,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00043.parquet",
+      "rows": 81216,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00043.parquet",
+      "rows": 95280,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00043.parquet",
+      "rows": 110256,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00043.parquet",
+      "rows": 95328,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00043.parquet",
+      "rows": 66960,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00043.parquet",
+      "rows": 105456,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00043.parquet",
+      "rows": 100560,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00043.parquet",
+      "rows": 86112,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00043.parquet",
+      "rows": 100128,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00043.parquet",
+      "rows": 110256,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00043.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00043.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00044.parquet",
+      "rows": 102297,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00044.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00044.parquet",
+      "rows": 95760,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00044.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00044.parquet",
+      "rows": 95760,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00044.parquet",
+      "rows": 66864,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00044.parquet",
+      "rows": 105072,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00044.parquet",
+      "rows": 100224,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00044.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00044.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00044.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00044.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00044.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00045.parquet",
+      "rows": 101667,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00045.parquet",
+      "rows": 80880,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00045.parquet",
+      "rows": 95952,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00045.parquet",
+      "rows": 110208,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00045.parquet",
+      "rows": 95760,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00045.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00045.parquet",
+      "rows": 105408,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00045.parquet",
+      "rows": 100704,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00045.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00045.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00045.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00045.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00045.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00046.parquet",
+      "rows": 101982,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00046.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00046.parquet",
+      "rows": 95760,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00046.parquet",
+      "rows": 109728,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00046.parquet",
+      "rows": 95856,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00046.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00046.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00046.parquet",
+      "rows": 100656,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00046.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00046.parquet",
+      "rows": 100704,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00046.parquet",
+      "rows": 109968,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00046.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00046.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00047.parquet",
+      "rows": 102342,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00047.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00047.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00047.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00047.parquet",
+      "rows": 95808,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00047.parquet",
+      "rows": 66432,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00047.parquet",
+      "rows": 105120,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00047.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00047.parquet",
+      "rows": 85296,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00047.parquet",
+      "rows": 99456,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00047.parquet",
+      "rows": 110208,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00047.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00047.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00048.parquet",
+      "rows": 102393,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00048.parquet",
+      "rows": 81600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00048.parquet",
+      "rows": 95760,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00048.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00048.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00048.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00048.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00048.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00048.parquet",
+      "rows": 86400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00048.parquet",
+      "rows": 100656,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00048.parquet",
+      "rows": 109680,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00048.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00048.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00049.parquet",
+      "rows": 101979,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00049.parquet",
+      "rows": 81216,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00049.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00049.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00049.parquet",
+      "rows": 96000,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00049.parquet",
+      "rows": 67200,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00049.parquet",
+      "rows": 105600,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00049.parquet",
+      "rows": 100704,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00049.parquet",
+      "rows": 86352,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00049.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00049.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00049.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00049.parquet",
+      "rows": 4752,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00050.parquet",
+      "rows": 100815,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00050.parquet",
+      "rows": 80448,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00050.parquet",
+      "rows": 94608,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00050.parquet",
+      "rows": 108960,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00050.parquet",
+      "rows": 95040,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00050.parquet",
+      "rows": 66528,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00050.parquet",
+      "rows": 104544,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00050.parquet",
+      "rows": 99264,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00050.parquet",
+      "rows": 85680,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00050.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00050.parquet",
+      "rows": 110400,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00050.parquet",
+      "rows": 100800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00050.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00051.parquet",
+      "rows": 88044,
+      "symbols": 86
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00051.parquet",
+      "rows": 70752,
+      "symbols": 89
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00051.parquet",
+      "rows": 85680,
+      "symbols": 90
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00051.parquet",
+      "rows": 102144,
+      "symbols": 95
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00051.parquet",
+      "rows": 91344,
+      "symbols": 96
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00051.parquet",
+      "rows": 65040,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00051.parquet",
+      "rows": 102192,
+      "symbols": 98
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00051.parquet",
+      "rows": 98784,
+      "symbols": 98
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00051.parquet",
+      "rows": 84672,
+      "symbols": 98
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00051.parquet",
+      "rows": 98544,
+      "symbols": 99
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00051.parquet",
+      "rows": 109728,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00051.parquet",
+      "rows": 100752,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00051.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00052.parquet",
+      "rows": 38065,
+      "symbols": 40
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00052.parquet",
+      "rows": 32832,
+      "symbols": 41
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00052.parquet",
+      "rows": 42048,
+      "symbols": 44
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00052.parquet",
+      "rows": 50208,
+      "symbols": 48
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00052.parquet",
+      "rows": 46464,
+      "symbols": 49
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00052.parquet",
+      "rows": 33706,
+      "symbols": 53
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00052.parquet",
+      "rows": 56112,
+      "symbols": 57
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00052.parquet",
+      "rows": 60312,
+      "symbols": 63
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00052.parquet",
+      "rows": 53088,
+      "symbols": 62
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00052.parquet",
+      "rows": 62496,
+      "symbols": 62
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00052.parquet",
+      "rows": 68942,
+      "symbols": 66
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00052.parquet",
+      "rows": 67785,
+      "symbols": 71
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00052.parquet",
+      "rows": 3360,
+      "symbols": 70
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00053.parquet",
+      "rows": 52123,
+      "symbols": 53
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00053.parquet",
+      "rows": 44592,
+      "symbols": 55
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00053.parquet",
+      "rows": 53616,
+      "symbols": 58
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00053.parquet",
+      "rows": 64272,
+      "symbols": 59
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00053.parquet",
+      "rows": 57648,
+      "symbols": 63
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00053.parquet",
+      "rows": 42912,
+      "symbols": 66
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00053.parquet",
+      "rows": 72144,
+      "symbols": 70
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00053.parquet",
+      "rows": 72768,
+      "symbols": 76
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00053.parquet",
+      "rows": 67968,
+      "symbols": 82
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00053.parquet",
+      "rows": 85776,
+      "symbols": 91
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00053.parquet",
+      "rows": 102432,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00053.parquet",
+      "rows": 99168,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00053.parquet",
+      "rows": 4800,
+      "symbols": 100
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00054.parquet",
+      "rows": 94663,
+      "symbols": 97
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00054.parquet",
+      "rows": 79152,
+      "symbols": 97
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00054.parquet",
+      "rows": 93120,
+      "symbols": 97
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00054.parquet",
+      "rows": 107088,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00054.parquet",
+      "rows": 93120,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00054.parquet",
+      "rows": 65184,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00054.parquet",
+      "rows": 102432,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00054.parquet",
+      "rows": 97728,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00054.parquet",
+      "rows": 83808,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00054.parquet",
+      "rows": 97776,
+      "symbols": 97
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00054.parquet",
+      "rows": 107136,
+      "symbols": 98
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00054.parquet",
+      "rows": 98976,
+      "symbols": 100
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00054.parquet",
+      "rows": 4752,
+      "symbols": 99
+    },
+    {
+      "path": "year=2025\\month=09\\part-batch-00055.parquet",
+      "rows": 88632,
+      "symbols": 91
+    },
+    {
+      "path": "year=2025\\month=10\\part-batch-00055.parquet",
+      "rows": 74256,
+      "symbols": 91
+    },
+    {
+      "path": "year=2025\\month=11\\part-batch-00055.parquet",
+      "rows": 87360,
+      "symbols": 91
+    },
+    {
+      "path": "year=2025\\month=12\\part-batch-00055.parquet",
+      "rows": 100416,
+      "symbols": 91
+    },
+    {
+      "path": "year=2026\\month=01\\part-batch-00055.parquet",
+      "rows": 87168,
+      "symbols": 91
+    },
+    {
+      "path": "year=2026\\month=02\\part-batch-00055.parquet",
+      "rows": 61152,
+      "symbols": 91
+    },
+    {
+      "path": "year=2026\\month=03\\part-batch-00055.parquet",
+      "rows": 96096,
+      "symbols": 91
+    },
+    {
+      "path": "year=2026\\month=04\\part-batch-00055.parquet",
+      "rows": 91728,
+      "symbols": 91
+    },
+    {
+      "path": "year=2026\\month=05\\part-batch-00055.parquet",
+      "rows": 78624,
+      "symbols": 91
+    },
+    {
+      "path": "year=2026\\month=06\\part-batch-00055.parquet",
+      "rows": 91248,
+      "symbols": 91
+    },
+    {
+      "path": "year=2026\\month=07\\part-batch-00055.parquet",
+      "rows": 99984,
+      "symbols": 91
+    },
+    {
+      "path": "year=2026\\month=08\\part-batch-00055.parquet",
+      "rows": 91728,
+      "symbols": 91
+    },
+    {
+      "path": "year=2026\\month=09\\part-batch-00055.parquet",
+      "rows": 4368,
+      "symbols": 91
+    }
+  ],
+  "empty_symbols": [
+    "300119.SZ",
+    "301688.SZ",
+    "301689.SZ",
+    "301699.SZ",
+    "821002.BJ",
+    "821003.BJ",
+    "821006.BJ",
+    "821007.BJ",
+    "821008.BJ",
+    "821010.BJ",
+    "821012.BJ",
+    "821013.BJ",
+    "821014.BJ",
+    "821016.BJ",
+    "821017.BJ",
+    "821019.BJ",
+    "821022.BJ",
+    "821023.BJ",
+    "821024.BJ",
+    "821026.BJ",
+    "821027.BJ",
+    "821028.BJ",
+    "821029.BJ",
+    "821030.BJ",
+    "910000.BJ",
+    "910001.BJ",
+    "910002.BJ",
+    "910003.BJ",
+    "910004.BJ",
+    "910005.BJ"
+  ],
+  "failed_symbols": {},
+  "quality": {
+    "rows": 63572025,
+    "files": 728,
+    "completed_batches": 56,
+    "empty_symbols": 30,
+    "failed_symbols": 0
+  }
+}

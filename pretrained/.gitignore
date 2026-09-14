@@ -1,0 +1,10 @@
+# Downloaded model repositories and generated manifest
+/Kronos-small/
+/Kronos-base/
+/Kronos-Tokenizer-base/
+/download_manifest.json
+
+# Keep this directory and its source files tracked
+!.gitignore
+!README.md
+!download_fixed_models.py

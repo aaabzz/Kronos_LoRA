@@ -1,0 +1,6 @@
+# Deployment adapters are generated model artifacts and can be very large.
+*
+!.gitignore
+!README.md
+!Kronos-base-QV-LoRA/
+!Kronos-base-QV-LoRA/.gitkeep
