@@ -9,29 +9,43 @@
 adapters/
 ├── 沪深300-LoRA/
 │   ├── adapter_config.json
-│   └── adapter_model.safetensors
+│   ├── adapter_model.safetensors
+│   └── deployment.json
 └── 科技股-LoRA/
     ├── adapter_config.json
-    └── adapter_model.safetensors
+    ├── adapter_model.safetensors
+    └── deployment.json
 ```
 
 也支持使用 `adapter_model.bin`，但推荐Safetensors格式。同一目录不要同时放
 `.safetensors` 和 `.bin`，否则该目录不会加入可用模型列表。服务启动时扫描
 所有完整子目录；模型名称取目录名，权重在首次选择时加载并缓存。
 
-基础模型和Tokenizer仍从以下目录加载：
+每个新 Adapter 应通过 `deployment.json` 声明训练时使用的基础模型和
+Tokenizer，例如：
 
-```text
-pretrained/Kronos-base/
-pretrained/Kronos-Tokenizer-base/
+```json
+{
+  "format_version": 1,
+  "base_model": {
+    "key": "small",
+    "name": "Kronos-small",
+    "path": "pretrained/Kronos-small"
+  },
+  "tokenizer": {
+    "name": "Kronos-Tokenizer-base",
+    "path": "pretrained/Kronos-Tokenizer-base"
+  }
+}
 ```
 
 文件完整后重启FastAPI，前端“LoRA微调模型”选项会自动变为可用。
 
-如需加载其他部署目录，可设置：
+如需扫描其他 Adapter 根目录，可设置：
 
 ```powershell
-$env:KRONOS_LORA_ADAPTER_PATH="D:\models\my-kronos-lora"
+$env:KRONOS_ADAPTERS_DIR="D:\models\kronos-adapters"
 ```
 
-不要把训练中尚未完成写入的Adapter目录直接配置为推理目录。
+该目录下的每个一级子目录都是一个独立 Adapter。不要把训练中尚未完成写入的
+Adapter目录直接放入推理根目录。

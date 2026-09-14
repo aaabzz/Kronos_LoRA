@@ -392,9 +392,14 @@ def test_subscription_preferences_apply_to_first_history_forecast() -> None:
     ]
 
     with TestClient(app) as client:
+        lora_key = next(
+            model["key"]
+            for model in client.get("/api/forecast/options").json()["models"]
+            if model["type"] == "lora"
+        )
         response = client.post(
             "/api/subscriptions/600519.SH"
-            "?window=18&pred_len=2&model_key=lora%3AKronos-base-QV-LoRA"
+            f"?window=18&pred_len=2&model_key={lora_key}"
             "&modes=median%2Cmean&sample_count=7"
         )
         assert response.status_code == 200
@@ -410,7 +415,7 @@ def test_subscription_preferences_apply_to_first_history_forecast() -> None:
 
         assert forecast["window"] == 18
         assert forecast["pred_len"] == 2
-        assert forecast["model_key"] == "lora:Kronos-base-QV-LoRA"
+        assert forecast["model_key"] == lora_key
         assert forecast["use_lora"] is True
         assert forecast["selected_modes"] == ["median", "mean"]
         assert set(forecast["modes"]) == {"median", "mean"}

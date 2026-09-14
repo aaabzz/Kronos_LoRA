@@ -39,7 +39,6 @@ class ForecastConfig:
     top_k: int = 0
     seed: int = 100
     flat_tolerance: float = 0.0
-    lora_adapter_path: str = "adapters/Kronos-base-QV-LoRA-1"
     adapters_root: str = "adapters"
     lora_base_model_path: str = "pretrained/Kronos-base"
     lora_tokenizer_path: str = "pretrained/Kronos-Tokenizer-base"
@@ -129,13 +128,13 @@ class KronosForecastService:
         self._predictors: dict[str, Predictor] = {}
         self._runtimes: dict[str, tuple[Any, Any]] = {}
         self._injected_predictor = predictor is not None
-        if predictor is not None:
-            self._predictors["base"] = predictor
-            self._predictors["small"] = predictor
-            self._predictors[self.default_lora_key] = predictor
-            # Keep the former built-in adapter key valid for existing clients/tests.
-            self._predictors.setdefault("lora:Kronos-base-QV-LoRA", predictor)
         self._model_deployments = self._discover_models()
+        if predictor is not None:
+            if not any(self.is_lora_key(key) for key in self._model_deployments):
+                self._model_deployments["lora:injected"] = None
+            self._predictors.update(
+                {key: predictor for key in self._model_deployments}
+            )
         self._pending: dict[
             str, tuple[str, list[dict[str, Any]], str, int, int, str, tuple[str, ...], int]
         ] = {}
@@ -214,14 +213,6 @@ class KronosForecastService:
         return selected
 
     @property
-    def lora_deployment(self) -> LoRADeployment:
-        return LoRADeployment.from_adapter_directory(
-            self.config.lora_adapter_path,
-            self.config.lora_base_model_path,
-            self.config.lora_tokenizer_path,
-        )
-
-    @property
     def lora_available(self) -> bool:
         if self._injected_predictor:
             return True
@@ -249,19 +240,16 @@ class KronosForecastService:
             self.config.lora_tokenizer_path,
         ):
             models[key] = deployment
-        # Preserve support for an explicitly configured adapter outside the root.
-        deployment = self.lora_deployment
-        if deployment.available:
-            models.setdefault(f"lora:{deployment.adapter_path.name}", deployment)
-        if self._injected_predictor:
-            models.setdefault(self.default_lora_key, None)
-            models.setdefault("lora:Kronos-base-QV-LoRA", None)
         return models
 
     @property
     def default_lora_key(self) -> str:
-        deployment = self.lora_deployment
-        return f"lora:{deployment.adapter_path.name}"
+        try:
+            return next(
+                key for key in self._model_deployments if self.is_lora_key(key)
+            )
+        except StopIteration as exc:
+            raise ValueError("No deployable LoRA model was found") from exc
 
     @staticmethod
     def _model_source(value: str) -> str:

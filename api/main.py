@@ -371,10 +371,6 @@ def _forecast_config_from_environment(*, enabled: bool) -> ForecastConfig:
         top_k=int(os.getenv("KRONOS_TOP_K", "0")),
         seed=int(os.getenv("KRONOS_SEED", "100")),
         flat_tolerance=float(os.getenv("KRONOS_FLAT_TOLERANCE", "0")),
-        lora_adapter_path=os.getenv(
-            "KRONOS_LORA_ADAPTER_PATH",
-            "adapters/Kronos-base-QV-LoRA-1",
-        ),
         adapters_root=os.getenv("KRONOS_ADAPTERS_DIR", "adapters"),
         lora_base_model_path=os.getenv(
             "KRONOS_LORA_BASE_MODEL_PATH", "pretrained/Kronos-base"
@@ -443,12 +439,9 @@ def create_app(
 
     @api.get("/api/forecast/options")
     async def forecast_options() -> dict[str, Any]:
-        deployment = bridge.forecaster.lora_deployment
         return {
             "lora_available": config.enabled and bridge.forecaster.lora_available,
             "lora_default": False,
-            "lora_adapter_path": str(deployment.adapter_path),
-            "lora_missing_files": list(deployment.missing_files),
             "models": bridge.forecaster.model_options,
             "default_model_key": "base",
         }
