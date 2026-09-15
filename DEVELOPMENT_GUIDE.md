@@ -1,6 +1,6 @@
 # Kronos A 股 5 分钟数据适配项目开发文档
 
-更新时间：2026-09-12
+更新时间：2026-09-15
 
 本文是当前工作树的总开发文档，面向继续开发、训练、评估和部署该项目的工程人员。
 它覆盖上游 Kronos 模型、本项目新增的 XtQuant 数据流水线、Token shard、LoRA/全参数训练、
@@ -554,26 +554,84 @@ checkpoints/<experiment-root>/runs/<run-name>/
 cd /data/projects/Kronos
 python3.12 -m venv .venv
 source .venv/bin/activate
-python -m pip install --upgrade pip setuptools wheel
+python -m pip install \
+  --upgrade \
+  pip \
+  setuptools \
+  wheel
 ```
 
 Blackwell 服务器先根据驱动支持的 CUDA 安装匹配的 PyTorch，再安装最小依赖：
 
 ```bash
-python -m pip install torch==<compatible-version> --index-url <official-pytorch-index>
-python -m pip install -r requirements-train-server.txt
+python -m pip install \
+  torch==<compatible-version> \
+  --index-url <official-pytorch-index>
+
+python -m pip install \
+  --requirement requirements-train-server.txt
 ```
 
 `requirements-train-server.txt` 故意不固定安装 PyTorch。安装后检查：
 
 ```bash
-python -c "import torch; print(torch.cuda.is_available()); print(torch.cuda.device_count()); print(torch.version.cuda); print(torch.cuda.get_device_name(0))"
+python - <<'PY'
+import torch
+
+print(torch.cuda.is_available())
+print(torch.cuda.device_count())
+print(torch.version.cuda)
+print(torch.cuda.get_device_name(0))
+PY
 ```
 
 QMT/XtQuant 只在装有 MiniQMT 且 Python 环境可导入 `xtquant` 的主机使用：
 
 ```bash
-python -c "import sys, xtquant; print(sys.executable); print(xtquant.__file__)"
+python - <<'PY'
+import sys
+import xtquant
+
+print(sys.executable)
+print(xtquant.__file__)
+PY
+```
+
+Windows PowerShell 虚拟环境创建与激活模板：
+
+```powershell
+Set-Location D:\PycharmProjects\Kronos
+py -3.12 -m venv .venv
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\.venv\Scripts\Activate.ps1
+python -m pip install `
+  --upgrade `
+  pip `
+  setuptools `
+  wheel
+```
+
+激活成功后，终端提示符通常带有 `(.venv)`。后续 Python 命令统一使用下面的形式，确保调用
+当前虚拟环境中的解释器和依赖：
+
+```powershell
+python -m <python_module> `
+  --option-a <value-a> `
+  --option-b <value-b>
+```
+
+例如检查解释器、CUDA 和 XtQuant 实际来自哪里：
+
+```powershell
+python -c "import sys; print(sys.executable)"
+python -c "import torch; print(torch.cuda.is_available(), torch.cuda.device_count(), torch.version.cuda)"
+python -c "import xtquant; print(xtquant.__file__)"
+```
+
+退出虚拟环境使用：
+
+```powershell
+deactivate
 ```
 
 ## 11. 使用方法
@@ -583,7 +641,8 @@ python -c "import sys, xtquant; print(sys.executable); print(xtquant.__file__)"
 ### 11.1 下载固定模型
 
 ```bash
-./.venv/bin/python -m pretrained.download_fixed_models --only all
+./.venv/bin/python -m pretrained.download_fixed_models \
+  --only all
 ```
 
 预期目录包含：
@@ -597,35 +656,88 @@ pretrained/Kronos-Tokenizer-base/{config.json,model.safetensors}
 ### 11.2 全市场下载与校验
 
 ```bash
-./.venv/bin/python -m data_download.xtquant.cli plan --start-date 20250912 --end-date 20260912 --output-dir data/lora
-./.venv/bin/python -m data_download.xtquant.cli download --start-date 20250912 --end-date 20260912 --output-dir data/lora
-./.venv/bin/python -m data_download.xtquant.cli validate --output-dir data/lora
+./.venv/bin/python -m data_download.xtquant.cli plan \
+  --start-date 20250912 \
+  --end-date 20260912 \
+  --output-dir data/lora
+
+./.venv/bin/python -m data_download.xtquant.cli download \
+  --start-date 20250912 \
+  --end-date 20260912 \
+  --output-dir data/lora
+
+./.venv/bin/python -m data_download.xtquant.cli validate \
+  --output-dir data/lora
 ```
 
 ### 11.3 多板块并集与已有数据过滤
 
 ```bash
-./.venv/bin/python -m data_download.xtquant.sector_universe list --contains 半导体
-./.venv/bin/python -m data_download.xtquant.sector_universe export --sector-name SW2半导体 --sector-name GN半导体设备 --output-dir data/sectors/semiconductor/universe --overwrite
-./.venv/bin/python -m data_download.xtquant.cli plan --start-date 20250912 --end-date 20260912 --symbols-file data/sectors/semiconductor/universe/symbols.txt --output-dir data/sectors/semiconductor/raw_5m
-./.venv/bin/python -m data_download.xtquant.cli filter-existing --source-dir data/lora --symbols-file data/sectors/semiconductor/universe/symbols.txt --output-dir data/sectors/semiconductor/raw_5m
-./.venv/bin/python -m data_download.xtquant.cli validate --output-dir data/sectors/semiconductor/raw_5m
+./.venv/bin/python -m data_download.xtquant.sector_universe list \
+  --contains 半导体
+
+./.venv/bin/python -m data_download.xtquant.sector_universe export \
+  --sector-name SW2半导体 \
+  --sector-name GN半导体设备 \
+  --output-dir data/sectors/semiconductor/universe \
+  --overwrite
+
+./.venv/bin/python -m data_download.xtquant.cli plan \
+  --start-date 20250912 \
+  --end-date 20260912 \
+  --symbols-file data/sectors/semiconductor/universe/symbols.txt \
+  --output-dir data/sectors/semiconductor/raw_5m
+
+./.venv/bin/python -m data_download.xtquant.cli filter-existing \
+  --source-dir data/lora \
+  --symbols-file data/sectors/semiconductor/universe/symbols.txt \
+  --output-dir data/sectors/semiconductor/raw_5m
+
+./.venv/bin/python -m data_download.xtquant.cli validate \
+  --output-dir data/sectors/semiconductor/raw_5m
 ```
 
 ### 11.4 单股下载
 
 ```bash
-./.venv/bin/python -m data_download.xtquant.cli plan --symbol 688449.SH --start-date 20250912 --end-date 20260912 --output-dir data/symbols/688449_SH/raw_5m
-./.venv/bin/python -m data_download.xtquant.cli download --symbol 688449.SH --start-date 20250912 --end-date 20260912 --output-dir data/symbols/688449_SH/raw_5m
-./.venv/bin/python -m data_download.xtquant.cli validate --output-dir data/symbols/688449_SH/raw_5m
+./.venv/bin/python -m data_download.xtquant.cli plan \
+  --symbol 688449.SH \
+  --start-date 20250912 \
+  --end-date 20260912 \
+  --output-dir data/symbols/688449_SH/raw_5m
+
+./.venv/bin/python -m data_download.xtquant.cli download \
+  --symbol 688449.SH \
+  --start-date 20250912 \
+  --end-date 20260912 \
+  --output-dir data/symbols/688449_SH/raw_5m
+
+./.venv/bin/python -m data_download.xtquant.cli validate \
+  --output-dir data/symbols/688449_SH/raw_5m
 ```
 
 ### 11.5 分桶与 Tokenize
 
 ```bash
-./.venv/bin/python -m finetune_lora.build_shards bucketize --data-path data/symbols/688449_SH/raw_5m --bucket-dir data/symbols/688449_SH/buckets --bucket-count 1 --symbol 688449.SH
+./.venv/bin/python -m finetune_lora.build_shards bucketize \
+  --data-path data/symbols/688449_SH/raw_5m \
+  --bucket-dir data/symbols/688449_SH/buckets \
+  --bucket-count 1 \
+  --symbol 688449.SH
 
-CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -m finetune_lora.build_shards tokenize --bucket-dir data/symbols/688449_SH/buckets --token-cache-path data/symbols/688449_SH/token_cache --tokenizer-path pretrained/Kronos-Tokenizer-base --symbol 688449.SH --train-end "2026-06-30 15:00:00" --validation-end "2026-07-31 15:00:00" --context-length 512 --stride 128 --target-mode all --encode-batch-size 64 --samples-per-shard 4096 --device cuda:0
+CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -m finetune_lora.build_shards tokenize \
+  --bucket-dir data/symbols/688449_SH/buckets \
+  --token-cache-path data/symbols/688449_SH/token_cache \
+  --tokenizer-path pretrained/Kronos-Tokenizer-base \
+  --symbol 688449.SH \
+  --train-end "2026-06-30 15:00:00" \
+  --validation-end "2026-07-31 15:00:00" \
+  --context-length 512 \
+  --stride 128 \
+  --target-mode all \
+  --encode-batch-size 64 \
+  --samples-per-shard 4096 \
+  --device cuda:0
 ```
 
 已有 `all` cache 训练 tail 282 时直接传 `--target-mode tail --target-length 282`，无需重新
@@ -634,7 +746,13 @@ Tokenize。
 ### 11.6 LoRA smoke test
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -m lora.smoke_test --base-model-path pretrained/Kronos-small --tokenizer-path pretrained/Kronos-Tokenizer-base --lora-target-profile self-attn-qv-s1 --lora-r 8 --lora-alpha 16 --device cuda:0
+CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -m lora.smoke_test \
+  --base-model-path pretrained/Kronos-small \
+  --tokenizer-path pretrained/Kronos-Tokenizer-base \
+  --lora-target-profile self-attn-qv-s1 \
+  --lora-r 8 \
+  --lora-alpha 16 \
+  --device cuda:0
 ```
 
 它应输出命中的 Linear、trainable/total 参数量，并完成前向和反向检查。
@@ -642,13 +760,62 @@ CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -m lora.smoke_test --base-model-path p
 ### 11.7 单卡 LoRA 训练
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.train --finetune-mode lora --base-model-path pretrained/Kronos-small --tokenizer-path pretrained/Kronos-Tokenizer-base --adapter-output-dir checkpoints/Kronos-small-LoRA --token-cache-path data/symbols/688449_SH/token_cache --context-length 512 --stride 128 --target-mode tail --target-length 282 --epochs 20 --batch-size 8 --gradient-accumulation-steps 2 --learning-rate 1e-4 --warmup-steps 500 --lora-target-profile self-attn-qkvo-fusion-s1 --lora-r 8 --lora-alpha 16 --s1-loss-weight 1.0 --s2-loss-weight 0.0 --training-s2-conditioning greedy --num-workers 16 --validation-interval 2000 --checkpoint-interval 2000 --precision bf16 --device cuda:0 --run-name 688449_small_tail282_qkvo_r8_e20
+CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.train \
+  --finetune-mode lora \
+  --base-model-path pretrained/Kronos-small \
+  --tokenizer-path pretrained/Kronos-Tokenizer-base \
+  --adapter-output-dir checkpoints/Kronos-small-LoRA \
+  --token-cache-path data/symbols/688449_SH/token_cache \
+  --context-length 512 \
+  --stride 128 \
+  --target-mode tail \
+  --target-length 282 \
+  --epochs 20 \
+  --batch-size 8 \
+  --gradient-accumulation-steps 2 \
+  --learning-rate 1e-4 \
+  --warmup-steps 500 \
+  --lora-target-profile self-attn-qkvo-fusion-s1 \
+  --lora-r 8 \
+  --lora-alpha 16 \
+  --s1-loss-weight 1.0 \
+  --s2-loss-weight 0.0 \
+  --training-s2-conditioning greedy \
+  --num-workers 16 \
+  --validation-interval 2000 \
+  --checkpoint-interval 2000 \
+  --precision bf16 \
+  --device cuda:0 \
+  --run-name 688449_small_tail282_qkvo_r8_e20
 ```
 
 ### 11.8 双卡 DDP
 
 ```bash
-CUDA_VISIBLE_DEVICES=0,1 torchrun --standalone --nproc-per-node=2 -m finetune_lora.train --finetune-mode lora --base-model-path pretrained/Kronos-base --tokenizer-path pretrained/Kronos-Tokenizer-base --adapter-output-dir checkpoints/Kronos-base-QV-LoRA --token-cache-path data/lora_token_cache_v1 --context-length 512 --stride 128 --target-mode all --epochs 6 --batch-size 4 --gradient-accumulation-steps 2 --learning-rate 1e-4 --lora-target-profile self-attn-qv-s1 --lora-r 8 --lora-alpha 16 --num-workers 4 --validation-interval 6000 --checkpoint-interval 2000 --precision bf16 --run-name qv_r8_s128_e6_lr1e4
+CUDA_VISIBLE_DEVICES=0,1 torchrun \
+  --standalone \
+  --nproc-per-node=2 \
+  -m finetune_lora.train \
+  --finetune-mode lora \
+  --base-model-path pretrained/Kronos-base \
+  --tokenizer-path pretrained/Kronos-Tokenizer-base \
+  --adapter-output-dir checkpoints/Kronos-base-QV-LoRA \
+  --token-cache-path data/lora_token_cache_v1 \
+  --context-length 512 \
+  --stride 128 \
+  --target-mode all \
+  --epochs 6 \
+  --batch-size 4 \
+  --gradient-accumulation-steps 2 \
+  --learning-rate 1e-4 \
+  --lora-target-profile self-attn-qv-s1 \
+  --lora-r 8 \
+  --lora-alpha 16 \
+  --num-workers 4 \
+  --validation-interval 6000 \
+  --checkpoint-interval 2000 \
+  --precision bf16 \
+  --run-name qv_r8_s128_e6_lr1e4
 ```
 
 `batch-size` 是每个 rank 的本地 batch。上述有效全局 batch 为：
@@ -660,7 +827,29 @@ CUDA_VISIBLE_DEVICES=0,1 torchrun --standalone --nproc-per-node=2 -m finetune_lo
 ### 11.9 全参数训练
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.train --finetune-mode full --base-model-path pretrained/Kronos-small --tokenizer-path pretrained/Kronos-Tokenizer-base --adapter-output-dir checkpoints/Kronos-small-Full --token-cache-path data/symbols/688449_SH/token_cache --context-length 512 --stride 128 --target-mode tail --target-length 282 --epochs 20 --batch-size 4 --gradient-accumulation-steps 4 --learning-rate 1e-5 --warmup-steps 100 --s1-loss-weight 1.0 --s2-loss-weight 0.0 --num-workers 16 --validation-interval 2000 --checkpoint-interval 2000 --precision bf16 --device cuda:0 --run-name 688449_small_full_tail282_e20
+CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.train \
+  --finetune-mode full \
+  --base-model-path pretrained/Kronos-small \
+  --tokenizer-path pretrained/Kronos-Tokenizer-base \
+  --adapter-output-dir checkpoints/Kronos-small-Full \
+  --token-cache-path data/symbols/688449_SH/token_cache \
+  --context-length 512 \
+  --stride 128 \
+  --target-mode tail \
+  --target-length 282 \
+  --epochs 20 \
+  --batch-size 4 \
+  --gradient-accumulation-steps 4 \
+  --learning-rate 1e-5 \
+  --warmup-steps 100 \
+  --s1-loss-weight 1.0 \
+  --s2-loss-weight 0.0 \
+  --num-workers 16 \
+  --validation-interval 2000 \
+  --checkpoint-interval 2000 \
+  --precision bf16 \
+  --device cuda:0 \
+  --run-name 688449_small_full_tail282_e20
 ```
 
 ### 11.10 恢复与阶段初始化
@@ -668,13 +857,18 @@ CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.train --finetune-m
 完整恢复同一个实验：
 
 ```bash
-./.venv/bin/python -u -m finetune_lora.train <原训练参数> --resume-from checkpoints/<root>/runs/<run>/resume/step-02000
+./.venv/bin/python -u -m finetune_lora.train \
+  <原训练参数> \
+  --resume-from checkpoints/<root>/runs/<run>/resume/step-02000
 ```
 
 从第一阶段 LoRA 权重开始新实验：
 
 ```bash
-./.venv/bin/python -u -m finetune_lora.train <第二阶段参数> --initialize-from-adapter checkpoints/<root>/runs/<stage1> --initialize-model-selection best
+./.venv/bin/python -u -m finetune_lora.train \
+  <第二阶段参数> \
+  --initialize-from-adapter checkpoints/<root>/runs/<stage1> \
+  --initialize-model-selection best
 ```
 
 前者恢复 optimizer/scheduler/step/RNG；后者只复制名称和 shape 兼容的 LoRA tensor，其他训练
@@ -685,25 +879,80 @@ CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.train --finetune-m
 Kronos-small 验证集：
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.evaluate_base --base-model-path pretrained/Kronos-small --tokenizer-path pretrained/Kronos-Tokenizer-base --token-cache-path data/lora_token_cache_v1 --split validation --s2-conditioning all --context-length 512 --stride 128 --batch-size 4 --num-workers 16 --precision bf16 --device cuda:0 --output-json evaluation_results/kronos_small_validation.json
+CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.evaluate_base \
+  --base-model-path pretrained/Kronos-small \
+  --tokenizer-path pretrained/Kronos-Tokenizer-base \
+  --token-cache-path data/lora_token_cache_v1 \
+  --split validation \
+  --s2-conditioning all \
+  --context-length 512 \
+  --stride 128 \
+  --batch-size 4 \
+  --num-workers 16 \
+  --precision bf16 \
+  --device cuda:0 \
+  --output-json evaluation_results/kronos_small_validation.json
 ```
 
 LoRA：
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.evaluate_adapter --base-model-path pretrained/Kronos-base --tokenizer-path pretrained/Kronos-Tokenizer-base --adapter-path checkpoints/Kronos-base-QV-LoRA/runs/<run> --model-selection best --token-cache-path data/lora_token_cache_v1 --split validation --s2-conditioning all --context-length 512 --stride 128 --batch-size 4 --num-workers 16 --precision bf16 --device cuda:0 --output-json checkpoints/Kronos-base-QV-LoRA/runs/<run>/validation_all.json
+CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.evaluate_adapter \
+  --base-model-path pretrained/Kronos-base \
+  --tokenizer-path pretrained/Kronos-Tokenizer-base \
+  --adapter-path checkpoints/Kronos-base-QV-LoRA/runs/<run> \
+  --model-selection best \
+  --token-cache-path data/lora_token_cache_v1 \
+  --split validation \
+  --s2-conditioning all \
+  --context-length 512 \
+  --stride 128 \
+  --batch-size 4 \
+  --num-workers 16 \
+  --precision bf16 \
+  --device cuda:0 \
+  --output-json checkpoints/Kronos-base-QV-LoRA/runs/<run>/validation_all.json
 ```
 
 全参数微调模型使用完整模型目录作为 `base-model-path`：
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.evaluate_base --base-model-path checkpoints/Kronos-small-Full/runs/<run>/best_model --tokenizer-path pretrained/Kronos-Tokenizer-base --token-cache-path data/symbols/688449_SH/token_cache --split validation --s2-conditioning all --context-length 512 --stride 128 --target-mode tail --target-length 282 --precision bf16 --device cuda:0 --output-json checkpoints/Kronos-small-Full/runs/<run>/validation_all.json
+CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.evaluate_base \
+  --base-model-path checkpoints/Kronos-small-Full/runs/<run>/best_model \
+  --tokenizer-path pretrained/Kronos-Tokenizer-base \
+  --token-cache-path data/symbols/688449_SH/token_cache \
+  --split validation \
+  --s2-conditioning all \
+  --context-length 512 \
+  --stride 128 \
+  --target-mode tail \
+  --target-length 282 \
+  --precision bf16 \
+  --device cuda:0 \
+  --output-json checkpoints/Kronos-small-Full/runs/<run>/validation_all.json
 ```
 
 ### 11.12 小数据过拟合诊断
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.overfit_validation --base-model-path pretrained/Kronos-base --tokenizer-path pretrained/Kronos-Tokenizer-base --token-cache-path data/lora_token_cache_v1 --context-length 512 --stride 128 --sample-count 512 --epochs 100 --batch-size 4 --gradient-accumulation-steps 4 --learning-rate 1e-4 --lora-target-profile self-attn-qv-s1 --proj-s1-rank 32 --proj-s1-alpha 64 --s1-loss-weight 1.0 --s2-loss-weight 0.0 --precision bf16 --device cuda:0
+CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.overfit_validation \
+  --base-model-path pretrained/Kronos-base \
+  --tokenizer-path pretrained/Kronos-Tokenizer-base \
+  --token-cache-path data/lora_token_cache_v1 \
+  --context-length 512 \
+  --stride 128 \
+  --sample-count 512 \
+  --epochs 100 \
+  --batch-size 4 \
+  --gradient-accumulation-steps 4 \
+  --learning-rate 1e-4 \
+  --lora-target-profile self-attn-qv-s1 \
+  --proj-s1-rank 32 \
+  --proj-s1-alpha 64 \
+  --s1-loss-weight 1.0 \
+  --s2-loss-weight 0.0 \
+  --precision bf16 \
+  --device cuda:0
 ```
 
 这是故意反复拟合同一小段验证数据的链路诊断，不能用于模型选择或报告泛化能力。
@@ -711,7 +960,20 @@ CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -u -m finetune_lora.overfit_validation
 ### 11.13 独立预测
 
 ```bash
-CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -m kronos_prediction_modes.cli --data-path data/symbols/688449_SH/raw_5m --symbol 688449.SH --adapter-path checkpoints/Kronos-small-LoRA/runs/<run>/best_model --base-model-path pretrained/Kronos-small --tokenizer-path pretrained/Kronos-Tokenizer-base --output-dir predictions/688449 --history-length 512 --future-timestamp "2026-09-14 09:35:00" --sample-count 32 --temperature 1.0 --top-p 0.9 --device cuda:0 --save-samples
+CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -m kronos_prediction_modes.cli \
+  --data-path data/symbols/688449_SH/raw_5m \
+  --symbol 688449.SH \
+  --adapter-path checkpoints/Kronos-small-LoRA/runs/<run>/best_model \
+  --base-model-path pretrained/Kronos-small \
+  --tokenizer-path pretrained/Kronos-Tokenizer-base \
+  --output-dir predictions/688449 \
+  --history-length 512 \
+  --future-timestamp "2026-09-14 09:35:00" \
+  --sample-count 32 \
+  --temperature 1.0 \
+  --top-p 0.9 \
+  --device cuda:0 \
+  --save-samples
 ```
 
 输出包括 greedy、sample mean、sample median、全部采样（可选）以及第一根预测 close 相对最后
@@ -722,25 +984,90 @@ CUDA_VISIBLE_DEVICES=0 ./.venv/bin/python -m kronos_prediction_modes.cli --data-
 检查 QMT 配置：
 
 ```bash
-./.venv/bin/python -m real_time.qmt_gateway --symbols 688449.SH --period 5m --history-count 512 --check
+./.venv/bin/python -m real_time.qmt_gateway \
+  --symbols 688449.SH \
+  --period 5m \
+  --history-count 512 \
+  --check
 ```
 
-启动 API（Windows/MiniQMT 主机示例）：
+以下命令均从项目根目录执行。Python 虚拟环境应先在当前 PowerShell 窗口中激活；前端使用
+Node.js，不依赖 Python 虚拟环境，建议在另一个 PowerShell 窗口启动。首次启动前端时执行一次
+`npm install`，后续无需重复安装，除非 `package.json` 或 lock 文件发生变化。
+
+#### 11.14.1 仅供本机访问
+
+终端 1：激活虚拟环境并启动 API：
 
 ```powershell
+Set-Location D:\PycharmProjects\Kronos
+.\.venv\Scripts\Activate.ps1
 $env:QMT_SYMBOLS='688449.SH'
 $env:KRONOS_DEVICE='cuda:0'
 $env:KRONOS_ADAPTERS_DIR='adapters'
-.\.venv\Scripts\python.exe -m uvicorn api.main:create_app --factory --host 127.0.0.1 --port 8000
+$env:CORS_ORIGINS='http://127.0.0.1:5173,http://localhost:5173'
+python -m uvicorn `
+  api.main:app `
+  --host 127.0.0.1 `
+  --port 7000
 ```
 
-启动前端：
+终端 2：启动只允许本机访问的前端：
 
-```bash
-cd frontend
+```powershell
+Set-Location D:\PycharmProjects\Kronos\frontend
+$env:VITE_API_HOST='127.0.0.1:7000'
 npm install
-npm run dev
+npx.cmd vite `
+  --host 127.0.0.1 `
+  --port 5173 `
+  --strictPort
 ```
+
+浏览器访问 `http://127.0.0.1:5173/`。API 健康检查地址为
+`http://127.0.0.1:7000/health`。
+
+#### 11.14.2 允许局域网设备访问
+
+先通过 `ipconfig` 找到运行服务这台 Windows 主机的局域网 IPv4 地址。以下示例假定地址为
+`192.168.100.119`，实际使用时必须替换为当前主机地址。
+
+终端 1：激活虚拟环境，并让 API 监听所有本机网络接口：
+
+```powershell
+Set-Location D:\PycharmProjects\Kronos
+.\.venv\Scripts\Activate.ps1
+$serverIp='192.168.100.119'
+$env:QMT_SYMBOLS='688449.SH'
+$env:KRONOS_DEVICE='cuda:0'
+$env:KRONOS_ADAPTERS_DIR='adapters'
+$env:CORS_ORIGINS="http://${serverIp}:5173"
+python -m uvicorn `
+  api.main:app `
+  --host 0.0.0.0 `
+  --port 7000
+```
+
+终端 2：让前端监听所有本机网络接口，并把浏览器请求指向可访问的局域网 API 地址：
+
+```powershell
+Set-Location D:\PycharmProjects\Kronos\frontend
+$serverIp='192.168.100.119'
+$env:VITE_API_HOST="${serverIp}:7000"
+npm install
+npx.cmd vite `
+  --host 0.0.0.0 `
+  --port 5173 `
+  --strictPort
+```
+
+局域网其他设备访问 `http://192.168.100.119:5173/`。`0.0.0.0` 只表示服务的监听范围，
+不能作为浏览器访问地址或 `VITE_API_HOST` 的值。如果系统提示无法连接，需要允许 Windows
+防火墙的 TCP 5173 和 7000 入站访问，并确认两台设备位于可互通的局域网。
+
+`api.main:app` 直接加载 `api/main.py` 中已经创建的 ASGI 应用对象，因此不需要 `--factory`。
+只有使用 `api.main:create_app` 让 Uvicorn 调用应用工厂时才需要 `--factory`。当前文档统一使用
+前端默认匹配的 API 端口 `7000`。
 
 主要 API：`/health`、`/api/forecast/options`、`/api/events/latest`、
 `POST /api/forecast/{symbol}`、订阅增删接口和 `/ws/market`。
@@ -893,13 +1220,27 @@ s1_top1=100%
 建议提交前执行：
 
 ```bash
-./.venv/bin/python -m pytest tests/test_finetune_lora.py tests/test_dataset_sharding.py tests/test_lora_smoke_test.py -q --disable-warnings
+./.venv/bin/python -m pytest \
+  tests/test_finetune_lora.py \
+  tests/test_dataset_sharding.py \
+  tests/test_lora_smoke_test.py \
+  -q \
+  --disable-warnings
 ```
 
 涉及下载、因果注意力、预测和 API 时追加：
 
 ```bash
-./.venv/bin/python -m pytest tests/test_xtquant_download.py tests/test_causal_attention.py tests/test_kronos_prediction_modes.py tests/test_lora_runtime.py tests/test_forecasting.py tests/test_market_api.py tests/test_qmt_gateway.py -q --disable-warnings
+./.venv/bin/python -m pytest \
+  tests/test_xtquant_download.py \
+  tests/test_causal_attention.py \
+  tests/test_kronos_prediction_modes.py \
+  tests/test_lora_runtime.py \
+  tests/test_forecasting.py \
+  tests/test_market_api.py \
+  tests/test_qmt_gateway.py \
+  -q \
+  --disable-warnings
 ```
 
 实验审阅清单：
